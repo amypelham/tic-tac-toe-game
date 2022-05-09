@@ -1,0 +1,40 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  font-family: 'Poppins', sans-serif;
+}
+/******************************************
+/* LAYOUT
+/*******************************************/
+h1{
+  font-weight: 700;
+}
+h1,h3,p,span{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+#board{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 400px;
+}
+.box{
+  width: 120px;
+  height: 120px;
+}
+#bottom{
+  display: flex;
+  justify-content: center;
+}
+button{
+  background-color: paleturquoise;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
