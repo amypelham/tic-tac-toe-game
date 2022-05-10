@@ -50,10 +50,10 @@ restartButton.addEventListener('click', startGame)
 function startGame() {
 	isPlayer_O_Turn = false
 	cellElements.forEach(cell => {
-		cell.classList.remove(PLAYER_X_CLASS)
-		cell.classList.remove(PLAYER_O_CLASS)
-		cell.removeEventListener('click', handleCellClick)
-		cell.addEventListener('click', handleCellClick, { once: true })
+		cell.classList.remove(playerX)
+		cell.classList.remove(playerO)
+		cell.removeEventListener('click', cellClick)
+		cell.addEventListener('click', cellClick, { once: true })
 	})
 	setBoardHoverClass()
 	winningMessageElement.classList.remove('show')
@@ -61,7 +61,7 @@ function startGame() {
 
 function cellClick(e) {
 	const cell = e.target
-	const currentClass = isPlayer_O_Turn ? PLAYER_O_CLASS : PLAYER_X_CLASS
+	const currentClass = isPlayer_O_Turn ? playerO : playerX
 	placeMark(cell, currentClass)
 	if (checkWin(currentClass)) {
 		endGame(false)
@@ -72,7 +72,6 @@ function cellClick(e) {
 		setBoardHoverClass()
 	}
 }
-
 
 
 
