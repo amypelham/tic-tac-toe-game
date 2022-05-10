@@ -38,14 +38,14 @@ const winningConditions = [
 const cellElements = document.querySelectorAll('[data-cell]')
 const boardElement = document.getElementById('board')
 const winningMessageElement = document.getElementById('placeToPutWinningMessage')
-const restartButton = document.getElementById('check')
+const startNew = document.getElementById('check')
 //const winningMessageTextElement = document.getElementById('winningMessageText')
 let isPlayer_O_Turn = false
 
 //Startgame
 startGame()
 
-restartButton.addEventListener('click', startGame)
+startNew.addEventListener('click', startGame)
 
 function startGame() {
 	isPlayer_O_Turn = false
@@ -74,6 +74,38 @@ function cellClick(e) {
 }
 
 
+function endGame(draw){
+    if(draw){
+        winningMessageElement.innerText = "It's a draw!"
+    }else{
+        winningMessageElement.innerText = `Player with ${isPlayer_O_Turn ? "O's" : "X's"} wins!`
+    }
+}
+
+function isDraw(){
+    return [...cellElements].every(cell => {
+        return cell.classList.contains(playerX) || cell.classList.contains(playerO)
+    })
+}
+
+function placeMark(cell, currentClass) {
+    cell.classList.add(currentClass)
+}
+
+function swapTurns(){
+    isPlayer_O_Turn = !isPlayer_O_Turn
+}
+
+
+function setBoardHoverClass() {
+	boardElement.classList.remove(playerX)
+	boardElement.classList.remove(playerO)
+	if (isPlayer_O_Turn) {
+		boardElement.classList.add(playerO)
+	} else {
+		boardElement.classList.add(playerX)
+	}
+}
 
 
 function checkWin(currentClass) {
