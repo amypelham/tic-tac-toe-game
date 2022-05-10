@@ -80,6 +80,7 @@ function endGame(draw){
     }else{
         winningMessageElement.innerText = `Player with ${isPlayer_O_Turn ? "O's" : "X's"} wins!`
     }
+    winningMessageElement.classList.add('show')
 }
 
 function isDraw(){
