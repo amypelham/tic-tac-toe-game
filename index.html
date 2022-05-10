@@ -1,72 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta name="viewport" content=
-            "width=device-width, initial-scale=1.0">
-       
-        <link rel="stylesheet"
-            type="text/css" href="tic.css">
-        <script src="tic.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Tic Tac Toe</title>
+
+          <!-- external CSS link -->
+          <link rel="stylesheet" href="style.css">
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     </head>
+
     <body>
-        <div id="main">
-            <h1>TIC TAC TOE</h1>
+          <div id="main">
+               <h1>TIC TAC TOE</h1>
        
-            <!-- Game Instructions -->
-            <p id="ins">How to Play? Just click on a box!<br><br>First Player starts as 
-                <b>Player X</b><br>And<br>Second 
-                Player as <b>Player 0</b>
-            </p>
-     
-      
+               <!-- Game Instructions -->
+               <h3>Click on a box to play!</h3>
+               <p>Player 1 places X's  |  Player 2 places O's</p>
+
+               <!-- Space to show player turn -->
+               <h3 id="playerTurn">Player --'s turn</h3>
+          </div>
+
+          <!-- Game Board -->
+          <section id="board">
+               <div class="box" data-cell></div>
+               <div class="box" data-cell></div>
+               <div class="box" data-cell></div>
+
+               <div class="box" data-cell></div>
+               <div class="box" data-cell></div>
+               <div class="box" data-cell></div>
+
+               <div class="box" data-cell></div>
+               <div class="box" data-cell></div>
+               <div class="box" data-cell></div>
+          </section>
+
+          <div id="bottom">
+          <!-- Button to reset game -->
+          <h3 id="placeToPutWinningMessage"></h3>
+          <button id="check" type="button" name="button">Start new Game</button>
+          </div>
        
-       
-            <br><br>
-            <!-- 3*3 grid of Boxes -->
-            <input type="text" id="box1" onclick=
-                 readonly>
-       
-            <input type="text" id="box2" onclick=
-               readonly>
-       
-            <input type="text" id="box3" onclick=
-                 readonly>
-            <br><br>
-       
-            <input type="text" id="box4" onclick=
-                 readonly>
-                   
-            <input type="text" id="box5" onclick=
-                 readonly>
-       
-            <input type="text" id="box6" onclick=
-                 readonly>
-            <br><br>
-       
-            <input type="text" id="box7" onclick=
-                 readonly>
-       
-            <input type="text" id="box8" onclick=
-                 readonly>
-       
-            <input type="text" id="box9" onclick=
-                 readonly>
-       
-            <!-- Grid end here  -->
-            <br><br><br>
-            <!-- Button to reset game -->
-            <button id="" onclick=>
-                
-            </button>
-       
-            <br><br>
-            <!-- Space to show player turn -->
-            <p id=""></p>
-     
-      
-       
-       
-        </div>
     </body>
-       
-    </html>
+</html>

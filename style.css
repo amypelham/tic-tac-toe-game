@@ -18,21 +18,43 @@ h1,h3,p,span{
   justify-content: center;
 }
 #board{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 400px;
+  width: 100vw;
+	height: 100vh;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	justify-items: center;
+	align-items: center;
+	grid-template-columns: repeat(3, auto);
 }
 .box{
+  border: 1px solid;
   width: 120px;
   height: 120px;
+}
+/* remove border for edges */
+.box:nth-child(1), .box:nth-child(2), .box:nth-child(3) {
+	border-top: none;
+}
+.box:nth-child(1), .box:nth-child(4), .box:nth-child(7) {
+	border-left: none;
+}
+.box:nth-child(3), .box:nth-child(6), .box:nth-child(9) {
+	border-right: none;
+}
+.box:nth-child(7), .box:nth-child(8), .box:nth-child(9) {
+	border-bottom: none;
+}
+.box.x, .box.circle {
+	cursor: not-allowed;
 }
 #bottom{
   display: flex;
   justify-content: center;
 }
 button{
-  background-color: paleturquoise;
+  background-color: black;
+  color: white;
 }
 
 /******************************************
