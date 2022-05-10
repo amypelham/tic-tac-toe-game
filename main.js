@@ -49,20 +49,20 @@ startNew.addEventListener('click', startGame)
 
 function startGame() {
 	isPlayer_O_Turn = false
-	cellElements.forEach(cell => {
-		cell.classList.remove(playerX)
-		cell.classList.remove(playerO)
-		cell.removeEventListener('click', cellClick)
-		cell.addEventListener('click', cellClick, { once: true })
+	cellElements.forEach(box => {
+		box.classList.remove(playerX)
+		box.classList.remove(playerO)
+		box.removeEventListener('click', cellClick)
+		box.addEventListener('click', cellClick, { once: true })
 	})
 	setBoardHoverClass()
 	winningMessageElement.classList.remove('show')
 }
 
 function cellClick(e) {
-	const cell = e.target
+	const box = e.target
 	const currentClass = isPlayer_O_Turn ? playerO : playerX
-	placeMark(cell, currentClass)
+	placeMark(box, currentClass)
 	if (checkWin(currentClass)) {
 		endGame(false)
 	} else if (isDraw()) {
@@ -83,13 +83,13 @@ function endGame(draw){
 }
 
 function isDraw(){
-    return [...cellElements].every(cell => {
-        return cell.classList.contains(playerX) || cell.classList.contains(playerO)
+    return [...cellElements].every(box => {
+        return box.classList.contains(playerX) || box.classList.contains(playerO)
     })
 }
 
-function placeMark(cell, currentClass) {
-    cell.classList.add(currentClass)
+function placeMark(box, currentClass) {
+    box.classList.add(currentClass)
 }
 
 function swapTurns(){
@@ -109,7 +109,7 @@ function setBoardHoverClass() {
 
 
 function checkWin(currentClass) {
-	return WINNING_COMBINATIONS.some(combination => {
+	return winningConditions.some(combination => {
 		return combination.every(index => {
 			return cellElements[index].classList.contains(currentClass)
 		})
