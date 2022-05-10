@@ -11,22 +11,23 @@ const winningConditions = [
     [2,4,6],
 ]
 
+const winningMessage = document.getElementById('placeToPutWinningMessage')
 
-//Place an X
-document.getElementById('topRight').addEventListener('click', placeMarkerX);
-
-
-
-//Place a Y
-document.getElementById('topMiddle').addEventListener('click', placeMarkerY);
+// //Place an X
+// document.getElementById('topRight').addEventListener('click', placeMarkerX);
 
 
-function placeMarkerX() {
-    document.querySelector('#topLeft').innerHTML = 'X';
-}
 
-function placeMarkerY() {
-    document.querySelector('#topMiddle').innerHTML = 'Y';
-}
+// //Place a Y
+// document.getElementById('topMiddle').addEventListener('click', placeMarkerY);
+
+
+// function placeMarkerX() {
+//     document.querySelector('#topLeft').innerHTML = 'X';
+// }
+
+// function placeMarkerY() {
+//     document.querySelector('#topMiddle').innerHTML = 'Y';
+// }
 
 
